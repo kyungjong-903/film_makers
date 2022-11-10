@@ -1,7 +1,7 @@
 package im.rubric.filmmakers.film.domain;
 
 
-import im.rubric.filmmakers.actor.domain.Actor;
+import im.rubric.filmmakers.filmmaker.actor.domain.Actor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

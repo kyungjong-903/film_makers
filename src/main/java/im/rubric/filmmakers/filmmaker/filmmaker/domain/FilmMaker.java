@@ -1,10 +1,10 @@
 package im.rubric.filmmakers.filmmaker.filmmaker.domain;
 
 
-import im.rubric.filmmakers.actor.domain.Actor;
+import im.rubric.filmmakers.filmmaker.actor.domain.Actor;
 import im.rubric.filmmakers.common.exception.InvalidParamException;
 import im.rubric.filmmakers.common.model.Gender;
-import im.rubric.filmmakers.director.domain.Director;
+import im.rubric.filmmakers.filmmaker.director.domain.Director;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
