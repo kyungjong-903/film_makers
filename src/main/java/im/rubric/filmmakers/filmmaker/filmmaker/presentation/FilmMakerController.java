@@ -1,8 +1,8 @@
-package im.rubric.filmmakers.filmcompany.presentation;
+package im.rubric.filmmakers.filmmaker.filmmaker.presentation;
 
 import im.rubric.filmmakers.common.response.CommonResponse;
 import im.rubric.filmmakers.common.response.PageResponse;
-import im.rubric.filmmakers.filmcompany.application.FilmCompanyFacade;
+import im.rubric.filmmakers.filmmaker.filmmaker.application.FilmMakerFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -15,47 +15,47 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/film_company")
-public class FilmCompanyController {
+@RequestMapping("/film_maker")
+public class FilmMakerController {
 
-    private final FilmCompanyFacade filmCompanyFacade;
-    private final FilmCompanyDtoMapper filmCompanyDtoMapper;
+    private final FilmMakerFacade filmMakerFacade;
+    private final FilmMakerDtoMapper filmMakerDtoMapper;
 
     @GetMapping
-    public PageResponse<FilmCompanyDto.Main> page(
-            FilmCompanyDto.Condition req,
+    public PageResponse<FilmMakerDto.Main> page(
+            FilmMakerDto.Condition req,
             @PageableDefault(sort = "id", direction = Sort.Direction.DESC) Pageable pageable
     ) {
-        var result = filmCompanyFacade.getFilmCompaniesPage(filmCompanyDtoMapper.of(req), pageable);
-        var res = result.map(filmCompanyDtoMapper::of);
+        var result = filmMakerFacade.getFilmMakersPage(filmMakerDtoMapper.of(req), pageable);
+        var res = result.map(filmMakerDtoMapper::of);
         return new PageResponse<>(res, pageable);
     }
 
     @GetMapping("/{id}")
-    public CommonResponse<FilmCompanyDto.Detail> detail(
+    public CommonResponse<FilmMakerDto.Detail> detail(
             @PathVariable Long id
     ) {
-        var filmCompany = filmCompanyFacade.getFilmCompanyDetail(id);
-        var res = filmCompanyDtoMapper.of(filmCompany);
+        var filmMaker = filmMakerFacade.getFilmMakerDetail(id);
+        var res = new FilmMakerDto.Detail(filmMaker);
         return CommonResponse.success(res);
     }
 
     @PostMapping
     public CommonResponse create(
-            @RequestBody @Valid FilmCompanyDto.Create req
+            @RequestBody @Valid FilmMakerDto.Create req
     ) {
-        var create = filmCompanyDtoMapper.of(req);
-        filmCompanyFacade.create(create);
+        var create = filmMakerDtoMapper.of(req);
+        filmMakerFacade.create(create);
         return CommonResponse.success();
     }
 
     @PutMapping("/{id}")
     public CommonResponse update(
             @PathVariable Long id,
-            @RequestBody @Valid FilmCompanyDto.Update req
+            @RequestBody @Valid FilmMakerDto.Update req
     ) {
-        var update = filmCompanyDtoMapper.of(req);
-        filmCompanyFacade.update(id, update);
+        var update = filmMakerDtoMapper.of(req);
+        filmMakerFacade.update(id, update);
         return CommonResponse.success();
     }
 

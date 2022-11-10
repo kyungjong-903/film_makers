@@ -42,7 +42,7 @@ public class FilmCompanyServiceImpl implements FilmCompanyService {
     }
 
     @Override
-    public FilmCompanyQuery.Detail getFilmCompanyByIdCondition(Long id) {
+    public FilmCompanyQuery.Detail getFilmCompanyById(Long id) {
         var company = getCompanyById(id);
         return filmCompanyInfoMapper.of(company, company.getFilms());
     }

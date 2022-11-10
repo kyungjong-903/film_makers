@@ -1,7 +1,7 @@
 package im.rubric.filmmakers.director.domain;
 
 
-import im.rubric.filmmakers.filmmaker.domain.FilmMaker;
+import im.rubric.filmmakers.filmmaker.filmmaker.domain.FilmMaker;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,7 +16,7 @@ public class Director {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     private FilmMaker filmMaker;
     
 }

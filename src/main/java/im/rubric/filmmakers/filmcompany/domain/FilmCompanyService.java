@@ -10,5 +10,5 @@ public interface FilmCompanyService {
 
     Page<FilmCompanyQuery.Main> getFilmCompaniesByCondition(FilmCompanyQuery.Condition condition, Pageable pageable);
 
-    FilmCompanyQuery.Detail getFilmCompanyByIdCondition(Long id);
+    FilmCompanyQuery.Detail getFilmCompanyById(Long id);
 }
