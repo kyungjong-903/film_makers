@@ -16,8 +16,8 @@ public class FilmCompanyFacade {
 
     private final FilmCompanyService filmCompanyService;
 
-    public void create(FilmCompanyCommand.Create command) {
-        filmCompanyService.create(command);
+    public void create(FilmCompanyCommand.Create create) {
+        filmCompanyService.create(create);
     }
 
     public void update(Long id, FilmCompanyCommand.Update update) {
@@ -29,6 +29,6 @@ public class FilmCompanyFacade {
     }
 
     public FilmCompanyQuery.Detail getFilmCompanyDetail(Long id) {
-        return filmCompanyService.getFilmCompanyByIdCondition(id);
+        return filmCompanyService.getFilmCompanyById(id);
     }
 }

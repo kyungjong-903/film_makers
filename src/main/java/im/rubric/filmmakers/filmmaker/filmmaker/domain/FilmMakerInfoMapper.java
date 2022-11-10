@@ -1,8 +1,8 @@
-package im.rubric.filmmakers.filmmaker.domain;
+package im.rubric.filmmakers.filmmaker.filmmaker.domain;
 
-import org.mapstruct.InjectionStrategy;
-import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
+import im.rubric.filmmakers.actor.domain.Actor;
+import im.rubric.filmmakers.director.domain.Director;
+import org.mapstruct.*;
 
 @Mapper(
         componentModel = "spring",

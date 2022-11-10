@@ -1,6 +1,8 @@
 package im.rubric.filmmakers.filmcompany.domain;
 
 import im.rubric.filmmakers.film.domain.Film;
+import im.rubric.filmmakers.filmmaker.filmmaker.domain.FilmMaker;
+import im.rubric.filmmakers.filmmaker.filmmaker.domain.FilmMakerInfo;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
@@ -18,5 +20,5 @@ public interface FilmCompanyInfoMapper {
 
     FilmCompanyQuery.Detail of(FilmCompany filmCompany, List<Film> films);
 
-
+    FilmMakerInfo.Main of(FilmMaker filmMaker);
 }

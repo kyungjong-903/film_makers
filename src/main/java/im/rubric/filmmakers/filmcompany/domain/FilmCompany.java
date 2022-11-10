@@ -59,7 +59,7 @@ public class FilmCompany {
 
     private void validateAddress() {
         if (address == null)
-            throw new InvalidParamException("Company Address can not be empty");
+            throw new InvalidParamException("Company Address can not be null");
     }
 
     private void validateName() {
