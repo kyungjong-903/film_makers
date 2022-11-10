@@ -57,7 +57,7 @@ public class FilmMakerInfo {
     public static class Actor {
         private Long id;
 
-        public Actor(im.rubric.filmmakers.actor.domain.Actor actor) {
+        public Actor(im.rubric.filmmakers.filmmaker.actor.domain.Actor actor) {
             this.id = actor.getId();
         }
     }
@@ -66,7 +66,7 @@ public class FilmMakerInfo {
     public static class Director {
         private Long id;
 
-        public Director(im.rubric.filmmakers.director.domain.Director director) {
+        public Director(im.rubric.filmmakers.filmmaker.director.domain.Director director) {
             this.id = director.getId();
         }
     }

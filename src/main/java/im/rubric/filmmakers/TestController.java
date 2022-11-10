@@ -1,7 +1,7 @@
 package im.rubric.filmmakers;
 
-import im.rubric.filmmakers.actor.infrastructure.ActorRepository;
-import im.rubric.filmmakers.director.infrastructure.DirectorRepository;
+import im.rubric.filmmakers.filmmaker.actor.infrastructure.ActorRepository;
+import im.rubric.filmmakers.filmmaker.director.infrastructure.DirectorRepository;
 import im.rubric.filmmakers.filmmaker.filmmaker.infrastructure.FilmMakerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
